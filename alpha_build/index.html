@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1b1c1f">
+    <title>Button Path</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="game">
+      <canvas id="unity-canvas" width="1280" height="720" tabindex="0"
+        aria-label="Button Path game"></canvas>
+      <div id="loading" role="status" aria-live="polite">
+        <div class="card">
+          <h1>Button Path</h1>
+          <p id="loading-message">Loading your game…</p>
+          <progress id="progress" max="1" value="0" aria-label="Loading game"></progress>
+          <p class="hint">On a phone, turn sideways for more room.</p>
+          <button id="reload" type="button" hidden>Reload</button>
+        </div>
+      </div>
+      <div id="warning" role="status" hidden></div>
+    </main>
+    <noscript>Turn on JavaScript to play Button Path.</noscript>
+    <script>
+      const canvas = document.getElementById("unity-canvas");
+      const loading = document.getElementById("loading");
+      const loadingMessage = document.getElementById("loading-message");
+      const progressBar = document.getElementById("progress");
+      const warning = document.getElementById("warning");
+      const reload = document.getElementById("reload");
+      let failed = false;
+      let warningTimeout;
+
+      function showFailure(message) {
+        failed = true;
+        console.error(message);
+        loading.hidden = false;
+        loadingMessage.textContent = "The game could not load. Check your connection and try again.";
+        progressBar.hidden = true;
+        reload.hidden = false;
+      }
+
+      function showBanner(message, type) {
+        if (type === "error") {
+          showFailure(message);
+          return;
+        }
+        console.warn(message);
+        warning.textContent = message;
+        warning.hidden = false;
+        clearTimeout(warningTimeout);
+        warningTimeout = setTimeout(() => { warning.hidden = true; }, 7000);
+      }
+
+      reload.addEventListener("click", () => location.reload());
+      canvas.addEventListener("contextmenu", event => event.preventDefault());
+      canvas.addEventListener("pointerdown", () => canvas.focus({ preventScroll: true }));
+      // Keep a swipe on the board inside the game, including browsers with partial touch-action support.
+      canvas.addEventListener("touchmove", event => event.preventDefault(), { passive: false });
+
+      const touchDevice = navigator.maxTouchPoints > 0 || matchMedia("(pointer: coarse)").matches;
+      const buildUrl = "Build";
+      const config = {
+        arguments: [],
+        dataUrl: buildUrl + "/Web.data",
+        frameworkUrl: buildUrl + "/Web.framework.js",
+        codeUrl: buildUrl + "/Web.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Prototype",
+        productName: "Button Path",
+        productVersion: "0.1.0",
+        matchWebGLToCanvasSize: true,
+        // A phone's 3x/4x screen otherwise multiplies render cost without helping small controls.
+        devicePixelRatio: Math.min(window.devicePixelRatio || 1, touchDevice ? 1.5 : 2),
+        showBanner: showBanner
+      };
+
+      const loader = document.createElement("script");
+      loader.src = buildUrl + "/Web.loader.js";
+      loader.onerror = () => showFailure("Could not download the game loader.");
+      loader.onload = () => {
+        createUnityInstance(canvas, config, progress => {
+          progressBar.value = progress;
+        }).then(() => {
+          if (!failed) loading.hidden = true;
+        }).catch(showFailure);
+      };
+      document.body.appendChild(loader);
+    </script>
+  </body>
+</html>
