@@ -7,6 +7,13 @@ files unchanged; publish later builds in a new directory.
 | --- | --- | --- |
 | Alpha check | [`alpha_check_build/`](alpha_check_build/) | Archived copy of the original published build, byte-for-byte from commit `440c10c` |
 | Alpha | [`alpha_build/`](alpha_build/) | 2026-10-20 release from Team200 `1014534` |
+| Beta progress check | [`beta_progress_check_build/`](beta_progress_check_build/) | 2026-11-03 release from Team200 `80f2261` |
+
+## Play the Beta progress check
+
+[Play the seven-level Beta build](https://yuanqu-peter.github.io/buttonpath_build/beta_progress_check_build/). Choose **Play**, then **Level 1** to start the campaign. The High Ledge is **Level 2**.
+
+See the [release record](beta_progress_check_build/README.md) and [file checksums](beta_progress_check_build/build-manifest.json).
 
 ## Play the Alpha build
 
