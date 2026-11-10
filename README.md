@@ -8,6 +8,13 @@ files unchanged; publish later builds in a new directory.
 | Alpha check | [`alpha_check_build/`](alpha_check_build/) | Archived copy of the original published build, byte-for-byte from commit `440c10c` |
 | Alpha | [`alpha_build/`](alpha_build/) | 2026-10-20 release from Team200 `1014534` |
 | Beta progress check | [`beta_progress_check_build/`](beta_progress_check_build/) | 2026-11-03 release from Team200 `80f2261` |
+| Beta | [`beta_build/`](beta_build/) | 2026-11-10 release from Team200 `57a6a13` |
+
+## Play the Beta build
+
+[Play the ten-level Beta build](https://yuanqu-peter.github.io/buttonpath_build/beta_build/). Select any level directly from the title-screen grid. This release includes The Crossing Hall, Level 10, completion stars, and the updated menus and tutorials.
+
+See the [release record](beta_build/README.md) and [file checksums](beta_build/build-manifest.json).
 
 ## Play the Beta progress check
 
