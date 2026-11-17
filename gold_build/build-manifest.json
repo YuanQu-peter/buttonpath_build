@@ -1,0 +1,33 @@
+{
+  "source_repository": "https://github.com/Firemanwolf/Team200",
+  "source_commit": "9a11d0b34c4acb1f38b2a2f24727ea15da933c44",
+  "release_date": "2026-11-17",
+  "unity_version": "6000.3.22f1",
+  "level_count": 10,
+  "files": {
+    "Build/Web.data": {
+      "size": 12504266,
+      "sha256": "ae5b667794cd91954b055b08d4345a8a5f02d589f4c873d6dfb24a0848a2cfd5"
+    },
+    "Build/Web.framework.js": {
+      "size": 465347,
+      "sha256": "fd64d76024bce8c6d2a93e4e9de7aed43355402cd9d230ec34d48e7ecf74e8e8"
+    },
+    "Build/Web.loader.js": {
+      "size": 26983,
+      "sha256": "5724f4db0df8ee0b104f5b49c7defc3fa322fc661496bc3fb8b7db81c75ebb6c"
+    },
+    "Build/Web.wasm": {
+      "size": 47028605,
+      "sha256": "3a29e6ac02397649542bfea1e38e5e9b6d5e1bf06b0c3e18bdcf949aa3acf1e4"
+    },
+    "index.html": {
+      "size": 3768,
+      "sha256": "419b17f16c1b00c90bf6a88112466222ae902584f6b99e0f4af81ed790b6d119"
+    },
+    "style.css": {
+      "size": 1745,
+      "sha256": "c89b24a9ca1dc353371a8ce885780471ebf089831027d962384118a0b3a03433"
+    }
+  }
+}

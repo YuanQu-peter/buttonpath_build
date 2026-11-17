@@ -1,0 +1,81 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #1b1c1f;
+  color: #f7f9fc;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body { position: fixed; inset: 0; }
+
+#game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
+
+#unity-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #1b1c1f;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+
+#loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #1b1c1f;
+}
+
+.card { width: min(360px, 100%); text-align: center; }
+h1 { margin: 0 0 16px; font-size: 30px; }
+p { line-height: 1.5; }
+.hint { color: #aab1bd; font-size: 14px; }
+progress { width: 100%; height: 14px; accent-color: #6db9ff; }
+button {
+  min-height: 48px;
+  min-width: 120px;
+  padding: 10px 22px;
+  border: 1px solid #6db9ff;
+  border-radius: 6px;
+  background: #244462;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+#warning {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top, 0px));
+  left: max(12px, env(safe-area-inset-left, 0px));
+  right: max(12px, env(safe-area-inset-right, 0px));
+  padding: 12px;
+  border: 1px solid #b99350;
+  border-radius: 6px;
+  background: #423620;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+noscript { position: fixed; inset: 24px; z-index: 2; }

@@ -9,6 +9,13 @@ files unchanged; publish later builds in a new directory.
 | Alpha | [`alpha_build/`](alpha_build/) | 2026-10-20 release from Team200 `1014534` |
 | Beta progress check | [`beta_progress_check_build/`](beta_progress_check_build/) | 2026-11-03 release from Team200 `80f2261` |
 | Beta | [`beta_build/`](beta_build/) | 2026-11-10 release from Team200 `57a6a13` |
+| Gold | [`gold_build/`](gold_build/) | 2026-11-17 release from Team200 `9a11d0b` |
+
+## Play the Gold build
+
+[Play the ten-level Gold build](https://yuanqu-peter.github.io/buttonpath_build/gold_build/). Select any level directly from the title-screen grid. This release adds moving-platform ghost previews in Levels 7, 8 and 10, a separate run timer, lightning-bolt Speed Up and Dash icons, and updated star-rating and Reverse combo guidance.
+
+See the [release record](gold_build/README.md) and [file checksums](gold_build/build-manifest.json).
 
 ## Play the Beta build
 
